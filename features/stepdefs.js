@@ -1,15 +1,10 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 const assert = require('assert');
 const puppeteer = require('puppeteer')
-var {AfterAll, BeforeAll} = require('@cucumber/cucumber');
-
-BeforeAll(async function() {
-    browser = await puppeteer.launch({})
-})
-
+var {After, Before} = require('@cucumber/cucumber');
 
 Given('The browser is open', async function () {
-    this.browser = browser;//await puppeteer.launch({})
+    this.browser = await puppeteer.launch({})
     this.page = await this.browser.newPage()
 });
 
@@ -26,9 +21,12 @@ Then('the title should be {string}', async function (string) {
     //await browser.close();
 });
 
+// BeforeAll(async function() {
+//     this.browser = await puppeteer.launch({})
+// })
 
-AfterAll(async function() {
-    await browser.close();
+After(async function() {
+    await this.browser.close();
     //return Promise.resolve()
     
   });
