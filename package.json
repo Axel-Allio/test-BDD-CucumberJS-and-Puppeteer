@@ -3,14 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js"
+    "test": "cucumber-js && echo test"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    
-  },
+  "devDependencies": {},
   "dependencies": {
     "@cucumber/cucumber": "^7.2.1",
     "puppeteer": "^9.1.1"
